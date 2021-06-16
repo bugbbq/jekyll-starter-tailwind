@@ -9,7 +9,8 @@ import tailwindcss from "tailwindcss";
 
 const SITE_ROOT = "./_site";
 const POST_BUILD_STYLESHEET = `${SITE_ROOT}/assets/css/`;
-const PRE_BUILD_STYLESHEET = "./src/style.css";
+// const PRE_BUILD_STYLESHEET = "./src/style.css";
+const PRE_BUILD_STYLESHEET = "./_sass/style.css";
 const TAILWIND_CONFIG = "./tailwind.config.js";
 
 // Fix for Windows compatibility
@@ -43,6 +44,16 @@ task("processStyles", () => {
     .pipe(dest(POST_BUILD_STYLESHEET));
 });
 
+task('css', function () {
+  return gulp.src('./src/*.css').pipe(
+    postcss([
+      require('@csstools/postcss-sass')(/* node-sass options */)
+    ])
+  ).pipe(
+    gulp.dest('.')
+  );
+});
+
 task("startServer", () => {
   browserSync.init({
     files: [SITE_ROOT + "/**"],
@@ -59,6 +70,7 @@ task("startServer", () => {
   watch(
     [
       "**/*.css",
+      "**/*.scss",
       "**/*.html",
       "**/*.js",
       "**/*.md",
@@ -75,3 +87,5 @@ const buildSite = series("buildJekyll", "processStyles");
 
 exports.serve = series(buildSite, "startServer");
 exports.default = series(buildSite);
+
+

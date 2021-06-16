@@ -1,0 +1,13 @@
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   24px;
+$base-line-height: 1.5;
+
+$text-color:       #aaa;
+
+
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $text-color;
+}
