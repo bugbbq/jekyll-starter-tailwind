@@ -44,8 +44,10 @@ task("processStyles", () => {
     .pipe(dest(POST_BUILD_STYLESHEET));
 });
 
+
+
 task('css', function () {
-  return gulp.src('./src/*.css').pipe(
+  return gulp.src('./_site/assets/css/*.css').pipe(
     postcss([
       require('@csstools/postcss-sass')(/* node-sass options */)
     ])
