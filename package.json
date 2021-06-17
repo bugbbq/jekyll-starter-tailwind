@@ -14,7 +14,7 @@
     "cssnano": "4.1.10",
     "gulp": "4.0.2",
     "gulp-postcss": "^9.0.0",
-    "postcss": "^8.3.4",
+    "postcss": "^8.3.5",
     "postcss-import": "14.0.0",
     "tailwindcss": "2.1.2"
   },
@@ -39,5 +39,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.0"
   }
 }
