@@ -1,6 +1,9 @@
 title: Tailwind Jekyll Starter Kit
 description: A starter kit for using Tailwind with Jekyll
 
+sass:
+    sass_dir: _sass
+
 exclude:
   - Gemfile
   - Gemfile.lock
