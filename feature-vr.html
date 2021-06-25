@@ -25,13 +25,14 @@ title: Virtual Reality
 </div>
 
 <div class="py-8">
+    <div id="animate" class="block w-1/6 h-8 bg-red-400 absolute z-0 left-56 -mt-3 hidden md:block""></div>
     <div class="lg:container mx-auto">
         <div class="flex flex-wrap mb-4 px-4 items-center justify-center">
             <div class="w-full md:w-1/2 mb-4 hidden md:block">
-                <img class="mx-auto" src="https://via.placeholder.com/400x320?text=CYBERNAUT+WITH+GOGGLE+HERE" alt="">
+                <img class="mx-auto z-10 relative" src="https://via.placeholder.com/400x320?text=CYBERNAUT+WITH+GOGGLE+HERE" alt="">
             </div>
             <div id="trigger"></div>       
-            <div id="animate" class="w-full md:w-1/2 mb-4 px-4">
+            <div class="w-full md:w-1/2 mb-4 px-4">
                 <h2>Deliver memorable training with VR</h2>
                 <p>Improve learning retention. Increase engagement. Foster empathy. Virtual reality ensures your employees get the most from their training.</p>
             </div>
@@ -58,7 +59,7 @@ title: Virtual Reality
 
 <script>
 	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300})
-					.setTween("#animate", {backgroundColor: "blue", scale: 1.7}) 
+					.setTween("#animate", {rotation:30,transformOrigin:"right top"}) 
                     .addIndicators({name: "2 (duration: 300)"})
 					.addTo(controller);
 </script>
