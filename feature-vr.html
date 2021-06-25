@@ -2,6 +2,10 @@
 layout: default
 title: Virtual Reality
 ---
+<script>
+	var controller = new ScrollMagic.Controller();
+</script>
+
 <div class="bg-yellow-50 py-16">
     <div class="lg:container mx-auto">
         <div class="flex flex-wrap mb-4 justify-center">
@@ -19,19 +23,20 @@ title: Virtual Reality
         </div>
     </div>
 </div>
+
 <div class="py-8">
     <div class="lg:container mx-auto">
         <div class="flex flex-wrap mb-4 px-4 items-center justify-center">
             <div class="w-full md:w-1/2 mb-4 hidden md:block">
                 <img class="mx-auto" src="https://via.placeholder.com/400x320?text=CYBERNAUT+WITH+GOGGLE+HERE" alt="">
             </div>
-            <div class="bg-gray-300 w-full md:w-1/2 mb-4 px-4">
+            <div id="trigger"></div>       
+            <div id="animate" class="w-full md:w-1/2 mb-4 px-4">
                 <h2>Deliver memorable training with VR</h2>
                 <p>Improve learning retention. Increase engagement. Foster empathy. Virtual reality ensures your employees get the most from their training.</p>
             </div>
         </div>
     </div>
-
     <div class="lg:container mx-auto">
         <div class="flex flex-wrap mb-4 justify-center">
             <div class="bg-gray-300 w-full md:w-1/2 px-4 mb-4 md:mb-0 order-2 md:order-1">
@@ -49,6 +54,17 @@ title: Virtual Reality
         </div>
     </div>
 </div>
+
+
+<script>
+	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300})
+					.setTween("#animate", {backgroundColor: "blue", scale: 1.7}) 
+                    .addIndicators({name: "2 (duration: 300)"})
+					.addTo(controller);
+</script>
+
+
+
 <div class="bg-yellow-50 pt-24">
     <div class="lg:container mx-auto">
         <div class="w-full md:w-1/2 mb-4 px-4">
@@ -147,3 +163,5 @@ title: Virtual Reality
         </div>
     </div>
 </div>
+
+
