@@ -25,13 +25,14 @@ title: Virtual Reality
 </div>
 
 <div class="py-8">
-    <div id="animate" class="block w-1/6 h-8 bg-red-400 absolute z-0 left-56 -mt-3 hidden md:block""></div>
+    <div id="trigger"></div>  
+    <div id="animateRed" class="block w-1/6 h-56 bg-red-400 absolute z-0 left-56 -mt-3 hidden md:block"></div>
+    <div id="animateGreen" class="block w-1/6 h-48 bg-green-400 absolute  left-48 hidden md:block"></div>
     <div class="lg:container mx-auto">
         <div class="flex flex-wrap mb-4 px-4 items-center justify-center">
             <div class="w-full md:w-1/2 mb-4 hidden md:block">
                 <img class="mx-auto z-10 relative" src="https://via.placeholder.com/400x320?text=CYBERNAUT+WITH+GOGGLE+HERE" alt="">
-            </div>
-            <div id="trigger"></div>       
+            </div>     
             <div class="w-full md:w-1/2 mb-4 px-4">
                 <h2>Deliver memorable training with VR</h2>
                 <p>Improve learning retention. Increase engagement. Foster empathy. Virtual reality ensures your employees get the most from their training.</p>
@@ -56,11 +57,16 @@ title: Virtual Reality
     </div>
 </div>
 
-
+<!-- Scrollmagic magic -->
 <script>
-	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300})
-					.setTween("#animate", {rotation:30,transformOrigin:"right top"}) 
-                    .addIndicators({name: "2 (duration: 300)"})
+	var sceneRed = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300, triggerHook: 0.4})
+					.setTween("#animateRed", {rotation:30,transformOrigin:"top"}) 
+                    .addIndicators({name: "rotato red(duration: 300)"})
+					.addTo(controller);
+
+    var sceneGreen = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500, triggerHook: 0.4})
+                    .setTween("#animateGreen", {rotation:20,transformOrigin:"right"}) 
+                    .addIndicators({name: "rotato green(duration: 500)"})
 					.addTo(controller);
 </script>
 
